@@ -30,20 +30,28 @@ class MidocoTableChooserValue extends AbstractStructBase
      */
     protected ?string $key = null;
     /**
+     * The description
+     * @var string|null
+     */
+    protected ?string $description = null;
+    /**
      * Constructor method for MidocoTableChooserValue
      * @uses MidocoTableChooserValue::setIsSelected()
      * @uses MidocoTableChooserValue::setValue()
      * @uses MidocoTableChooserValue::setKey()
+     * @uses MidocoTableChooserValue::setDescription()
      * @param bool $isSelected
      * @param string $value
      * @param string $key
+     * @param string $description
      */
-    public function __construct(?bool $isSelected = null, ?string $value = null, ?string $key = null)
+    public function __construct(?bool $isSelected = null, ?string $value = null, ?string $key = null, ?string $description = null)
     {
         $this
             ->setIsSelected($isSelected)
             ->setValue($value)
-            ->setKey($key);
+            ->setKey($key)
+            ->setDescription($description);
     }
     /**
      * Get isSelected value
@@ -111,6 +119,29 @@ class MidocoTableChooserValue extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
         }
         $this->key = $key;
+        
+        return $this;
+    }
+    /**
+     * Get description value
+     * @return string|null
+     */
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+    /**
+     * Set description value
+     * @param string $description
+     * @return \Pggns\MidocoApi\Mis\StructType\MidocoTableChooserValue
+     */
+    public function setDescription(?string $description = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($description) && !is_string($description)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
+        }
+        $this->description = $description;
         
         return $this;
     }

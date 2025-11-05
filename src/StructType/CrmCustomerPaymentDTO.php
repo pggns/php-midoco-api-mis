@@ -25,10 +25,35 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
      */
     protected ?bool $acceptDebit = null;
     /**
+     * The achCreditPayment
+     * @var bool|null
+     */
+    protected ?bool $achCreditPayment = null;
+    /**
+     * The achDebitPayment
+     * @var bool|null
+     */
+    protected ?bool $achDebitPayment = null;
+    /**
+     * The autoPrintInvoiceId
+     * @var string|null
+     */
+    protected ?string $autoPrintInvoiceId = null;
+    /**
      * The avoidDebit
      * @var bool|null
      */
     protected ?bool $avoidDebit = null;
+    /**
+     * The bacsCreditPayment
+     * @var bool|null
+     */
+    protected ?bool $bacsCreditPayment = null;
+    /**
+     * The bacsDebitPayment
+     * @var bool|null
+     */
+    protected ?bool $bacsDebitPayment = null;
     /**
      * The bankTransferCollective
      * @var int|null
@@ -90,6 +115,11 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
      */
     protected ?string $chargesGroup = null;
     /**
+     * The chequeCreditPayment
+     * @var bool|null
+     */
+    protected ?bool $chequeCreditPayment = null;
+    /**
      * The collectiveInvoice
      * @var bool|null
      */
@@ -149,6 +179,16 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
      * @var int|null
      */
     protected ?int $documentCopies = null;
+    /**
+     * The eftCreditPayment
+     * @var bool|null
+     */
+    protected ?bool $eftCreditPayment = null;
+    /**
+     * The eftDebitPayment
+     * @var bool|null
+     */
+    protected ?bool $eftDebitPayment = null;
     /**
      * The foreignBankTransfer
      * @var bool|null
@@ -260,6 +300,21 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
      */
     protected ?bool $smallBusiness = null;
     /**
+     * The swissCreditPayment
+     * @var bool|null
+     */
+    protected ?bool $swissCreditPayment = null;
+    /**
+     * The swissDebitPayment
+     * @var bool|null
+     */
+    protected ?bool $swissDebitPayment = null;
+    /**
+     * The vatCodeSales
+     * @var string|null
+     */
+    protected ?string $vatCodeSales = null;
+    /**
      * The vatLiability
      * @var bool|null
      */
@@ -270,10 +325,25 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
      */
     protected ?bool $vatOrganic = null;
     /**
+     * The wireCreditPayment
+     * @var bool|null
+     */
+    protected ?bool $wireCreditPayment = null;
+    /**
+     * The wiseCreditPayment
+     * @var bool|null
+     */
+    protected ?bool $wiseCreditPayment = null;
+    /**
      * Constructor method for CrmCustomerPaymentDTO
      * @uses CrmCustomerPaymentDTO::setAcceptCc()
      * @uses CrmCustomerPaymentDTO::setAcceptDebit()
+     * @uses CrmCustomerPaymentDTO::setAchCreditPayment()
+     * @uses CrmCustomerPaymentDTO::setAchDebitPayment()
+     * @uses CrmCustomerPaymentDTO::setAutoPrintInvoiceId()
      * @uses CrmCustomerPaymentDTO::setAvoidDebit()
+     * @uses CrmCustomerPaymentDTO::setBacsCreditPayment()
+     * @uses CrmCustomerPaymentDTO::setBacsDebitPayment()
      * @uses CrmCustomerPaymentDTO::setBankTransferCollective()
      * @uses CrmCustomerPaymentDTO::setBankTransferFees()
      * @uses CrmCustomerPaymentDTO::setBankTransferInstrKey1()
@@ -286,6 +356,7 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
      * @uses CrmCustomerPaymentDTO::setBillPerPassengerPaymentOfTicket()
      * @uses CrmCustomerPaymentDTO::setCcPrintSignature()
      * @uses CrmCustomerPaymentDTO::setChargesGroup()
+     * @uses CrmCustomerPaymentDTO::setChequeCreditPayment()
      * @uses CrmCustomerPaymentDTO::setCollectiveInvoice()
      * @uses CrmCustomerPaymentDTO::setCollectiveInvoiceType()
      * @uses CrmCustomerPaymentDTO::setCompanyUsage()
@@ -298,6 +369,8 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
      * @uses CrmCustomerPaymentDTO::setDisableCommissionOnVoid()
      * @uses CrmCustomerPaymentDTO::setDisableProvisionPayment()
      * @uses CrmCustomerPaymentDTO::setDocumentCopies()
+     * @uses CrmCustomerPaymentDTO::setEftCreditPayment()
+     * @uses CrmCustomerPaymentDTO::setEftDebitPayment()
      * @uses CrmCustomerPaymentDTO::setForeignBankTransfer()
      * @uses CrmCustomerPaymentDTO::setHasBtContract()
      * @uses CrmCustomerPaymentDTO::setInvoiceAsEmail()
@@ -320,11 +393,21 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
      * @uses CrmCustomerPaymentDTO::setSepaDebit()
      * @uses CrmCustomerPaymentDTO::setSepaTransfer()
      * @uses CrmCustomerPaymentDTO::setSmallBusiness()
+     * @uses CrmCustomerPaymentDTO::setSwissCreditPayment()
+     * @uses CrmCustomerPaymentDTO::setSwissDebitPayment()
+     * @uses CrmCustomerPaymentDTO::setVatCodeSales()
      * @uses CrmCustomerPaymentDTO::setVatLiability()
      * @uses CrmCustomerPaymentDTO::setVatOrganic()
+     * @uses CrmCustomerPaymentDTO::setWireCreditPayment()
+     * @uses CrmCustomerPaymentDTO::setWiseCreditPayment()
      * @param bool $acceptCc
      * @param bool $acceptDebit
+     * @param bool $achCreditPayment
+     * @param bool $achDebitPayment
+     * @param string $autoPrintInvoiceId
      * @param bool $avoidDebit
+     * @param bool $bacsCreditPayment
+     * @param bool $bacsDebitPayment
      * @param int $bankTransferCollective
      * @param string $bankTransferFees
      * @param string $bankTransferInstrKey1
@@ -337,6 +420,7 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
      * @param bool $billPerPassengerPaymentOfTicket
      * @param int $ccPrintSignature
      * @param string $chargesGroup
+     * @param bool $chequeCreditPayment
      * @param bool $collectiveInvoice
      * @param string $collectiveInvoiceType
      * @param bool $companyUsage
@@ -349,6 +433,8 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
      * @param bool $disableCommissionOnVoid
      * @param bool $disableProvisionPayment
      * @param int $documentCopies
+     * @param bool $eftCreditPayment
+     * @param bool $eftDebitPayment
      * @param bool $foreignBankTransfer
      * @param bool $hasBtContract
      * @param bool $invoiceAsEmail
@@ -371,15 +457,25 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
      * @param bool $sepaDebit
      * @param bool $sepaTransfer
      * @param bool $smallBusiness
+     * @param bool $swissCreditPayment
+     * @param bool $swissDebitPayment
+     * @param string $vatCodeSales
      * @param bool $vatLiability
      * @param bool $vatOrganic
+     * @param bool $wireCreditPayment
+     * @param bool $wiseCreditPayment
      */
-    public function __construct(?bool $acceptCc = null, ?bool $acceptDebit = null, ?bool $avoidDebit = null, ?int $bankTransferCollective = null, ?string $bankTransferFees = null, ?string $bankTransferInstrKey1 = null, ?string $bankTransferInstrKey2 = null, ?string $bankTransferInstrKey3 = null, ?string $bankTransferInstrKey4 = null, ?int $bankTransferProt = null, ?string $bankTransferType = null, ?bool $billPerPassenger = null, ?bool $billPerPassengerPaymentOfTicket = null, ?int $ccPrintSignature = null, ?string $chargesGroup = null, ?bool $collectiveInvoice = null, ?string $collectiveInvoiceType = null, ?bool $companyUsage = null, ?string $concernId = null, ?float $creditLimit = null, ?float $creditLimitWarningPercent = null, ?int $customerId = null, ?bool $directDebit = null, ?string $directDebitDate = null, ?bool $disableCommissionOnVoid = null, ?bool $disableProvisionPayment = null, ?int $documentCopies = null, ?bool $foreignBankTransfer = null, ?bool $hasBtContract = null, ?bool $invoiceAsEmail = null, ?string $invoiceFileFormatId = null, ?bool $isDunningBlock = null, ?bool $isReverseCharge = null, ?string $methodOfPayment = null, ?bool $noPaymentMethod = null, ?bool $outgoingBankTransfer = null, ?string $paymentConditionId = null, ?int $paymentDelay = null, ?int $paymentForcedCcCardId = null, ?int $paymentForcedDebitCardId = null, ?string $paymentForcedType = null, ?bool $prepayment = null, ?int $printOptionId = null, ?bool $qrInvoiceTransfer = null, ?bool $rebateAllowed = null, ?bool $sendCsvInvoice = null, ?bool $sepaDebit = null, ?bool $sepaTransfer = null, ?bool $smallBusiness = null, ?bool $vatLiability = null, ?bool $vatOrganic = null)
+    public function __construct(?bool $acceptCc = null, ?bool $acceptDebit = null, ?bool $achCreditPayment = null, ?bool $achDebitPayment = null, ?string $autoPrintInvoiceId = null, ?bool $avoidDebit = null, ?bool $bacsCreditPayment = null, ?bool $bacsDebitPayment = null, ?int $bankTransferCollective = null, ?string $bankTransferFees = null, ?string $bankTransferInstrKey1 = null, ?string $bankTransferInstrKey2 = null, ?string $bankTransferInstrKey3 = null, ?string $bankTransferInstrKey4 = null, ?int $bankTransferProt = null, ?string $bankTransferType = null, ?bool $billPerPassenger = null, ?bool $billPerPassengerPaymentOfTicket = null, ?int $ccPrintSignature = null, ?string $chargesGroup = null, ?bool $chequeCreditPayment = null, ?bool $collectiveInvoice = null, ?string $collectiveInvoiceType = null, ?bool $companyUsage = null, ?string $concernId = null, ?float $creditLimit = null, ?float $creditLimitWarningPercent = null, ?int $customerId = null, ?bool $directDebit = null, ?string $directDebitDate = null, ?bool $disableCommissionOnVoid = null, ?bool $disableProvisionPayment = null, ?int $documentCopies = null, ?bool $eftCreditPayment = null, ?bool $eftDebitPayment = null, ?bool $foreignBankTransfer = null, ?bool $hasBtContract = null, ?bool $invoiceAsEmail = null, ?string $invoiceFileFormatId = null, ?bool $isDunningBlock = null, ?bool $isReverseCharge = null, ?string $methodOfPayment = null, ?bool $noPaymentMethod = null, ?bool $outgoingBankTransfer = null, ?string $paymentConditionId = null, ?int $paymentDelay = null, ?int $paymentForcedCcCardId = null, ?int $paymentForcedDebitCardId = null, ?string $paymentForcedType = null, ?bool $prepayment = null, ?int $printOptionId = null, ?bool $qrInvoiceTransfer = null, ?bool $rebateAllowed = null, ?bool $sendCsvInvoice = null, ?bool $sepaDebit = null, ?bool $sepaTransfer = null, ?bool $smallBusiness = null, ?bool $swissCreditPayment = null, ?bool $swissDebitPayment = null, ?string $vatCodeSales = null, ?bool $vatLiability = null, ?bool $vatOrganic = null, ?bool $wireCreditPayment = null, ?bool $wiseCreditPayment = null)
     {
         $this
             ->setAcceptCc($acceptCc)
             ->setAcceptDebit($acceptDebit)
+            ->setAchCreditPayment($achCreditPayment)
+            ->setAchDebitPayment($achDebitPayment)
+            ->setAutoPrintInvoiceId($autoPrintInvoiceId)
             ->setAvoidDebit($avoidDebit)
+            ->setBacsCreditPayment($bacsCreditPayment)
+            ->setBacsDebitPayment($bacsDebitPayment)
             ->setBankTransferCollective($bankTransferCollective)
             ->setBankTransferFees($bankTransferFees)
             ->setBankTransferInstrKey1($bankTransferInstrKey1)
@@ -392,6 +488,7 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
             ->setBillPerPassengerPaymentOfTicket($billPerPassengerPaymentOfTicket)
             ->setCcPrintSignature($ccPrintSignature)
             ->setChargesGroup($chargesGroup)
+            ->setChequeCreditPayment($chequeCreditPayment)
             ->setCollectiveInvoice($collectiveInvoice)
             ->setCollectiveInvoiceType($collectiveInvoiceType)
             ->setCompanyUsage($companyUsage)
@@ -404,6 +501,8 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
             ->setDisableCommissionOnVoid($disableCommissionOnVoid)
             ->setDisableProvisionPayment($disableProvisionPayment)
             ->setDocumentCopies($documentCopies)
+            ->setEftCreditPayment($eftCreditPayment)
+            ->setEftDebitPayment($eftDebitPayment)
             ->setForeignBankTransfer($foreignBankTransfer)
             ->setHasBtContract($hasBtContract)
             ->setInvoiceAsEmail($invoiceAsEmail)
@@ -426,8 +525,13 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
             ->setSepaDebit($sepaDebit)
             ->setSepaTransfer($sepaTransfer)
             ->setSmallBusiness($smallBusiness)
+            ->setSwissCreditPayment($swissCreditPayment)
+            ->setSwissDebitPayment($swissDebitPayment)
+            ->setVatCodeSales($vatCodeSales)
             ->setVatLiability($vatLiability)
-            ->setVatOrganic($vatOrganic);
+            ->setVatOrganic($vatOrganic)
+            ->setWireCreditPayment($wireCreditPayment)
+            ->setWiseCreditPayment($wiseCreditPayment);
     }
     /**
      * Get acceptCc value
@@ -476,6 +580,75 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
         return $this;
     }
     /**
+     * Get achCreditPayment value
+     * @return bool|null
+     */
+    public function getAchCreditPayment(): ?bool
+    {
+        return $this->achCreditPayment;
+    }
+    /**
+     * Set achCreditPayment value
+     * @param bool $achCreditPayment
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setAchCreditPayment(?bool $achCreditPayment = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($achCreditPayment) && !is_bool($achCreditPayment)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($achCreditPayment, true), gettype($achCreditPayment)), __LINE__);
+        }
+        $this->achCreditPayment = $achCreditPayment;
+        
+        return $this;
+    }
+    /**
+     * Get achDebitPayment value
+     * @return bool|null
+     */
+    public function getAchDebitPayment(): ?bool
+    {
+        return $this->achDebitPayment;
+    }
+    /**
+     * Set achDebitPayment value
+     * @param bool $achDebitPayment
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setAchDebitPayment(?bool $achDebitPayment = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($achDebitPayment) && !is_bool($achDebitPayment)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($achDebitPayment, true), gettype($achDebitPayment)), __LINE__);
+        }
+        $this->achDebitPayment = $achDebitPayment;
+        
+        return $this;
+    }
+    /**
+     * Get autoPrintInvoiceId value
+     * @return string|null
+     */
+    public function getAutoPrintInvoiceId(): ?string
+    {
+        return $this->autoPrintInvoiceId;
+    }
+    /**
+     * Set autoPrintInvoiceId value
+     * @param string $autoPrintInvoiceId
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setAutoPrintInvoiceId(?string $autoPrintInvoiceId = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($autoPrintInvoiceId) && !is_string($autoPrintInvoiceId)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($autoPrintInvoiceId, true), gettype($autoPrintInvoiceId)), __LINE__);
+        }
+        $this->autoPrintInvoiceId = $autoPrintInvoiceId;
+        
+        return $this;
+    }
+    /**
      * Get avoidDebit value
      * @return bool|null
      */
@@ -495,6 +668,52 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($avoidDebit, true), gettype($avoidDebit)), __LINE__);
         }
         $this->avoidDebit = $avoidDebit;
+        
+        return $this;
+    }
+    /**
+     * Get bacsCreditPayment value
+     * @return bool|null
+     */
+    public function getBacsCreditPayment(): ?bool
+    {
+        return $this->bacsCreditPayment;
+    }
+    /**
+     * Set bacsCreditPayment value
+     * @param bool $bacsCreditPayment
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setBacsCreditPayment(?bool $bacsCreditPayment = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($bacsCreditPayment) && !is_bool($bacsCreditPayment)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($bacsCreditPayment, true), gettype($bacsCreditPayment)), __LINE__);
+        }
+        $this->bacsCreditPayment = $bacsCreditPayment;
+        
+        return $this;
+    }
+    /**
+     * Get bacsDebitPayment value
+     * @return bool|null
+     */
+    public function getBacsDebitPayment(): ?bool
+    {
+        return $this->bacsDebitPayment;
+    }
+    /**
+     * Set bacsDebitPayment value
+     * @param bool $bacsDebitPayment
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setBacsDebitPayment(?bool $bacsDebitPayment = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($bacsDebitPayment) && !is_bool($bacsDebitPayment)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($bacsDebitPayment, true), gettype($bacsDebitPayment)), __LINE__);
+        }
+        $this->bacsDebitPayment = $bacsDebitPayment;
         
         return $this;
     }
@@ -775,6 +994,29 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
         return $this;
     }
     /**
+     * Get chequeCreditPayment value
+     * @return bool|null
+     */
+    public function getChequeCreditPayment(): ?bool
+    {
+        return $this->chequeCreditPayment;
+    }
+    /**
+     * Set chequeCreditPayment value
+     * @param bool $chequeCreditPayment
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setChequeCreditPayment(?bool $chequeCreditPayment = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($chequeCreditPayment) && !is_bool($chequeCreditPayment)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($chequeCreditPayment, true), gettype($chequeCreditPayment)), __LINE__);
+        }
+        $this->chequeCreditPayment = $chequeCreditPayment;
+        
+        return $this;
+    }
+    /**
      * Get collectiveInvoice value
      * @return bool|null
      */
@@ -1047,6 +1289,52 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($documentCopies, true), gettype($documentCopies)), __LINE__);
         }
         $this->documentCopies = $documentCopies;
+        
+        return $this;
+    }
+    /**
+     * Get eftCreditPayment value
+     * @return bool|null
+     */
+    public function getEftCreditPayment(): ?bool
+    {
+        return $this->eftCreditPayment;
+    }
+    /**
+     * Set eftCreditPayment value
+     * @param bool $eftCreditPayment
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setEftCreditPayment(?bool $eftCreditPayment = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($eftCreditPayment) && !is_bool($eftCreditPayment)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($eftCreditPayment, true), gettype($eftCreditPayment)), __LINE__);
+        }
+        $this->eftCreditPayment = $eftCreditPayment;
+        
+        return $this;
+    }
+    /**
+     * Get eftDebitPayment value
+     * @return bool|null
+     */
+    public function getEftDebitPayment(): ?bool
+    {
+        return $this->eftDebitPayment;
+    }
+    /**
+     * Set eftDebitPayment value
+     * @param bool $eftDebitPayment
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setEftDebitPayment(?bool $eftDebitPayment = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($eftDebitPayment) && !is_bool($eftDebitPayment)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($eftDebitPayment, true), gettype($eftDebitPayment)), __LINE__);
+        }
+        $this->eftDebitPayment = $eftDebitPayment;
         
         return $this;
     }
@@ -1557,6 +1845,75 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
         return $this;
     }
     /**
+     * Get swissCreditPayment value
+     * @return bool|null
+     */
+    public function getSwissCreditPayment(): ?bool
+    {
+        return $this->swissCreditPayment;
+    }
+    /**
+     * Set swissCreditPayment value
+     * @param bool $swissCreditPayment
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setSwissCreditPayment(?bool $swissCreditPayment = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($swissCreditPayment) && !is_bool($swissCreditPayment)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($swissCreditPayment, true), gettype($swissCreditPayment)), __LINE__);
+        }
+        $this->swissCreditPayment = $swissCreditPayment;
+        
+        return $this;
+    }
+    /**
+     * Get swissDebitPayment value
+     * @return bool|null
+     */
+    public function getSwissDebitPayment(): ?bool
+    {
+        return $this->swissDebitPayment;
+    }
+    /**
+     * Set swissDebitPayment value
+     * @param bool $swissDebitPayment
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setSwissDebitPayment(?bool $swissDebitPayment = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($swissDebitPayment) && !is_bool($swissDebitPayment)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($swissDebitPayment, true), gettype($swissDebitPayment)), __LINE__);
+        }
+        $this->swissDebitPayment = $swissDebitPayment;
+        
+        return $this;
+    }
+    /**
+     * Get vatCodeSales value
+     * @return string|null
+     */
+    public function getVatCodeSales(): ?string
+    {
+        return $this->vatCodeSales;
+    }
+    /**
+     * Set vatCodeSales value
+     * @param string $vatCodeSales
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setVatCodeSales(?string $vatCodeSales = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($vatCodeSales) && !is_string($vatCodeSales)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vatCodeSales, true), gettype($vatCodeSales)), __LINE__);
+        }
+        $this->vatCodeSales = $vatCodeSales;
+        
+        return $this;
+    }
+    /**
      * Get vatLiability value
      * @return bool|null
      */
@@ -1599,6 +1956,52 @@ class CrmCustomerPaymentDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($vatOrganic, true), gettype($vatOrganic)), __LINE__);
         }
         $this->vatOrganic = $vatOrganic;
+        
+        return $this;
+    }
+    /**
+     * Get wireCreditPayment value
+     * @return bool|null
+     */
+    public function getWireCreditPayment(): ?bool
+    {
+        return $this->wireCreditPayment;
+    }
+    /**
+     * Set wireCreditPayment value
+     * @param bool $wireCreditPayment
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setWireCreditPayment(?bool $wireCreditPayment = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($wireCreditPayment) && !is_bool($wireCreditPayment)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($wireCreditPayment, true), gettype($wireCreditPayment)), __LINE__);
+        }
+        $this->wireCreditPayment = $wireCreditPayment;
+        
+        return $this;
+    }
+    /**
+     * Get wiseCreditPayment value
+     * @return bool|null
+     */
+    public function getWiseCreditPayment(): ?bool
+    {
+        return $this->wiseCreditPayment;
+    }
+    /**
+     * Set wiseCreditPayment value
+     * @param bool $wiseCreditPayment
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerPaymentDTO
+     */
+    public function setWiseCreditPayment(?bool $wiseCreditPayment = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($wiseCreditPayment) && !is_bool($wiseCreditPayment)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($wiseCreditPayment, true), gettype($wiseCreditPayment)), __LINE__);
+        }
+        $this->wiseCreditPayment = $wiseCreditPayment;
         
         return $this;
     }

@@ -15,25 +15,90 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 class CrmPersonTravellerDTO extends AbstractStructBase
 {
     /**
+     * The birthDay
+     * @var int|null
+     */
+    protected ?int $birthDay = null;
+    /**
+     * The birthMonth
+     * @var int|null
+     */
+    protected ?int $birthMonth = null;
+    /**
+     * The birthName
+     * @var string|null
+     */
+    protected ?string $birthName = null;
+    /**
+     * The birthYear
+     * @var int|null
+     */
+    protected ?int $birthYear = null;
+    /**
      * The birthday
      * @var string|null
      */
     protected ?string $birthday = null;
+    /**
+     * The birthdayNotProvided
+     * @var bool|null
+     */
+    protected ?bool $birthdayNotProvided = null;
+    /**
+     * The contactName
+     * @var string|null
+     */
+    protected ?string $contactName = null;
+    /**
+     * The contactPhone
+     * @var string|null
+     */
+    protected ?string $contactPhone = null;
     /**
      * The customerId
      * @var int|null
      */
     protected ?int $customerId = null;
     /**
+     * The disabilityDescription
+     * @var string|null
+     */
+    protected ?string $disabilityDescription = null;
+    /**
+     * The email
+     * @var string|null
+     */
+    protected ?string $email = null;
+    /**
      * The expiryDate
      * @var string|null
      */
     protected ?string $expiryDate = null;
     /**
+     * The facesId
+     * @var string|null
+     */
+    protected ?string $facesId = null;
+    /**
      * The forename
      * @var string|null
      */
     protected ?string $forename = null;
+    /**
+     * The gender
+     * @var int|null
+     */
+    protected ?int $gender = null;
+    /**
+     * The genderNotProvided
+     * @var bool|null
+     */
+    protected ?bool $genderNotProvided = null;
+    /**
+     * The hasDisability
+     * @var bool|null
+     */
+    protected ?bool $hasDisability = null;
     /**
      * The idCardNo
      * @var string|null
@@ -55,106 +120,6 @@ class CrmPersonTravellerDTO extends AbstractStructBase
      */
     protected ?string $issuePlace = null;
     /**
-     * The name
-     * @var string|null
-     */
-    protected ?string $name = null;
-    /**
-     * The nationality
-     * @var string|null
-     */
-    protected ?string $nationality = null;
-    /**
-     * The orgUnit
-     * @var string|null
-     */
-    protected ?string $orgUnit = null;
-    /**
-     * The placeOfBirth
-     * @var string|null
-     */
-    protected ?string $placeOfBirth = null;
-    /**
-     * The salutationId
-     * @var string|null
-     */
-    protected ?string $salutationId = null;
-    /**
-     * The title
-     * @var string|null
-     */
-    protected ?string $title = null;
-    /**
-     * The travellerId
-     * @var int|null
-     */
-    protected ?int $travellerId = null;
-    /**
-     * The travellerType
-     * @var string|null
-     */
-    protected ?string $travellerType = null;
-    /**
-     * The birthDay
-     * @var int|null
-     */
-    protected ?int $birthDay = null;
-    /**
-     * The birthMonth
-     * @var int|null
-     */
-    protected ?int $birthMonth = null;
-    /**
-     * The birthName
-     * @var string|null
-     */
-    protected ?string $birthName = null;
-    /**
-     * The birthYear
-     * @var int|null
-     */
-    protected ?int $birthYear = null;
-    /**
-     * The birthdayNotProvided
-     * @var bool|null
-     */
-    protected ?bool $birthdayNotProvided = null;
-    /**
-     * The contactName
-     * @var string|null
-     */
-    protected ?string $contactName = null;
-    /**
-     * The contactPhone
-     * @var string|null
-     */
-    protected ?string $contactPhone = null;
-    /**
-     * The disabilityDescription
-     * @var string|null
-     */
-    protected ?string $disabilityDescription = null;
-    /**
-     * The email
-     * @var string|null
-     */
-    protected ?string $email = null;
-    /**
-     * The facesId
-     * @var string|null
-     */
-    protected ?string $facesId = null;
-    /**
-     * The gender
-     * @var int|null
-     */
-    protected ?int $gender = null;
-    /**
-     * The hasDisability
-     * @var bool|null
-     */
-    protected ?bool $hasDisability = null;
-    /**
      * The mailingProhibited
      * @var bool|null
      */
@@ -174,6 +139,16 @@ class CrmPersonTravellerDTO extends AbstractStructBase
      * @var bool|null
      */
     protected ?bool $middleNameNotAvailable = null;
+    /**
+     * The name
+     * @var string|null
+     */
+    protected ?string $name = null;
+    /**
+     * The nationality
+     * @var string|null
+     */
+    protected ?string $nationality = null;
     /**
      * The needsBarrierFreeAccess
      * @var bool|null
@@ -205,10 +180,35 @@ class CrmPersonTravellerDTO extends AbstractStructBase
      */
     protected ?string $phone = null;
     /**
+     * The placeOfBirth
+     * @var string|null
+     */
+    protected ?string $placeOfBirth = null;
+    /**
      * The position
      * @var int|null
      */
     protected ?int $position = null;
+    /**
+     * The salutationId
+     * @var string|null
+     */
+    protected ?string $salutationId = null;
+    /**
+     * The title
+     * @var string|null
+     */
+    protected ?string $title = null;
+    /**
+     * The travellerId
+     * @var int|null
+     */
+    protected ?int $travellerId = null;
+    /**
+     * The travellerType
+     * @var string|null
+     */
+    protected ?string $travellerType = null;
     /**
      * The typeId
      * @var int|null
@@ -216,136 +216,228 @@ class CrmPersonTravellerDTO extends AbstractStructBase
     protected ?int $typeId = null;
     /**
      * Constructor method for CrmPersonTravellerDTO
-     * @uses CrmPersonTravellerDTO::setBirthday()
+     * @uses CrmPersonTravellerDTO::setBirthDay()
+     * @uses CrmPersonTravellerDTO::setBirthMonth()
+     * @uses CrmPersonTravellerDTO::setBirthName()
+     * @uses CrmPersonTravellerDTO::setBirthYear()
+     * @uses CrmPersonTravellerDTO::setBirthday_1()
+     * @uses CrmPersonTravellerDTO::setBirthdayNotProvided()
+     * @uses CrmPersonTravellerDTO::setContactName()
+     * @uses CrmPersonTravellerDTO::setContactPhone()
      * @uses CrmPersonTravellerDTO::setCustomerId()
+     * @uses CrmPersonTravellerDTO::setDisabilityDescription()
+     * @uses CrmPersonTravellerDTO::setEmail()
      * @uses CrmPersonTravellerDTO::setExpiryDate()
+     * @uses CrmPersonTravellerDTO::setFacesId()
      * @uses CrmPersonTravellerDTO::setForename()
+     * @uses CrmPersonTravellerDTO::setGender()
+     * @uses CrmPersonTravellerDTO::setGenderNotProvided()
+     * @uses CrmPersonTravellerDTO::setHasDisability()
      * @uses CrmPersonTravellerDTO::setIdCardNo()
      * @uses CrmPersonTravellerDTO::setIdCardType()
      * @uses CrmPersonTravellerDTO::setIssueDate()
      * @uses CrmPersonTravellerDTO::setIssuePlace()
-     * @uses CrmPersonTravellerDTO::setName()
-     * @uses CrmPersonTravellerDTO::setNationality()
-     * @uses CrmPersonTravellerDTO::setOrgUnit()
-     * @uses CrmPersonTravellerDTO::setPlaceOfBirth()
-     * @uses CrmPersonTravellerDTO::setSalutationId()
-     * @uses CrmPersonTravellerDTO::setTitle()
-     * @uses CrmPersonTravellerDTO::setTravellerId()
-     * @uses CrmPersonTravellerDTO::setTravellerType()
-     * @uses CrmPersonTravellerDTO::setBirthDay_1()
-     * @uses CrmPersonTravellerDTO::setBirthMonth()
-     * @uses CrmPersonTravellerDTO::setBirthName()
-     * @uses CrmPersonTravellerDTO::setBirthYear()
-     * @uses CrmPersonTravellerDTO::setBirthdayNotProvided()
-     * @uses CrmPersonTravellerDTO::setContactName()
-     * @uses CrmPersonTravellerDTO::setContactPhone()
-     * @uses CrmPersonTravellerDTO::setDisabilityDescription()
-     * @uses CrmPersonTravellerDTO::setEmail()
-     * @uses CrmPersonTravellerDTO::setFacesId()
-     * @uses CrmPersonTravellerDTO::setGender()
-     * @uses CrmPersonTravellerDTO::setHasDisability()
      * @uses CrmPersonTravellerDTO::setMailingProhibited()
      * @uses CrmPersonTravellerDTO::setMaritalStatus()
      * @uses CrmPersonTravellerDTO::setMiddleName()
      * @uses CrmPersonTravellerDTO::setMiddleNameNotAvailable()
+     * @uses CrmPersonTravellerDTO::setName()
+     * @uses CrmPersonTravellerDTO::setNationality()
      * @uses CrmPersonTravellerDTO::setNeedsBarrierFreeAccess()
      * @uses CrmPersonTravellerDTO::setPassportExpiryDate()
      * @uses CrmPersonTravellerDTO::setPassportIssueDate()
      * @uses CrmPersonTravellerDTO::setPassportIssuePlace()
      * @uses CrmPersonTravellerDTO::setPassportNo()
      * @uses CrmPersonTravellerDTO::setPhone()
+     * @uses CrmPersonTravellerDTO::setPlaceOfBirth()
      * @uses CrmPersonTravellerDTO::setPosition()
+     * @uses CrmPersonTravellerDTO::setSalutationId()
+     * @uses CrmPersonTravellerDTO::setTitle()
+     * @uses CrmPersonTravellerDTO::setTravellerId()
+     * @uses CrmPersonTravellerDTO::setTravellerType()
      * @uses CrmPersonTravellerDTO::setTypeId()
-     * @param string $birthday
-     * @param int $customerId
-     * @param string $expiryDate
-     * @param string $forename
-     * @param string $idCardNo
-     * @param string $idCardType
-     * @param string $issueDate
-     * @param string $issuePlace
-     * @param string $name
-     * @param string $nationality
-     * @param string $orgUnit
-     * @param string $placeOfBirth
-     * @param string $salutationId
-     * @param string $title
-     * @param int $travellerId
-     * @param string $travellerType
      * @param int $birthDay
      * @param int $birthMonth
      * @param string $birthName
      * @param int $birthYear
+     * @param string $birthday
      * @param bool $birthdayNotProvided
      * @param string $contactName
      * @param string $contactPhone
+     * @param int $customerId
      * @param string $disabilityDescription
      * @param string $email
+     * @param string $expiryDate
      * @param string $facesId
+     * @param string $forename
      * @param int $gender
+     * @param bool $genderNotProvided
      * @param bool $hasDisability
+     * @param string $idCardNo
+     * @param string $idCardType
+     * @param string $issueDate
+     * @param string $issuePlace
      * @param bool $mailingProhibited
      * @param string $maritalStatus
      * @param string $middleName
      * @param bool $middleNameNotAvailable
+     * @param string $name
+     * @param string $nationality
      * @param bool $needsBarrierFreeAccess
      * @param string $passportExpiryDate
      * @param string $passportIssueDate
      * @param string $passportIssuePlace
      * @param string $passportNo
      * @param string $phone
+     * @param string $placeOfBirth
      * @param int $position
+     * @param string $salutationId
+     * @param string $title
+     * @param int $travellerId
+     * @param string $travellerType
      * @param int $typeId
      */
-    public function __construct(?string $birthday = null, ?int $customerId = null, ?string $expiryDate = null, ?string $forename = null, ?string $idCardNo = null, ?string $idCardType = null, ?string $issueDate = null, ?string $issuePlace = null, ?string $name = null, ?string $nationality = null, ?string $orgUnit = null, ?string $placeOfBirth = null, ?string $salutationId = null, ?string $title = null, ?int $travellerId = null, ?string $travellerType = null, ?int $birthDay_1 = null, ?int $birthMonth = null, ?string $birthName = null, ?int $birthYear = null, ?bool $birthdayNotProvided = null, ?string $contactName = null, ?string $contactPhone = null, ?string $disabilityDescription = null, ?string $email = null, ?string $facesId = null, ?int $gender = null, ?bool $hasDisability = null, ?bool $mailingProhibited = null, ?string $maritalStatus = null, ?string $middleName = null, ?bool $middleNameNotAvailable = null, ?bool $needsBarrierFreeAccess = null, ?string $passportExpiryDate = null, ?string $passportIssueDate = null, ?string $passportIssuePlace = null, ?string $passportNo = null, ?string $phone = null, ?int $position = null, ?int $typeId = null)
+    public function __construct(?int $birthDay = null, ?int $birthMonth = null, ?string $birthName = null, ?int $birthYear = null, ?string $birthday_1 = null, ?bool $birthdayNotProvided = null, ?string $contactName = null, ?string $contactPhone = null, ?int $customerId = null, ?string $disabilityDescription = null, ?string $email = null, ?string $expiryDate = null, ?string $facesId = null, ?string $forename = null, ?int $gender = null, ?bool $genderNotProvided = null, ?bool $hasDisability = null, ?string $idCardNo = null, ?string $idCardType = null, ?string $issueDate = null, ?string $issuePlace = null, ?bool $mailingProhibited = null, ?string $maritalStatus = null, ?string $middleName = null, ?bool $middleNameNotAvailable = null, ?string $name = null, ?string $nationality = null, ?bool $needsBarrierFreeAccess = null, ?string $passportExpiryDate = null, ?string $passportIssueDate = null, ?string $passportIssuePlace = null, ?string $passportNo = null, ?string $phone = null, ?string $placeOfBirth = null, ?int $position = null, ?string $salutationId = null, ?string $title = null, ?int $travellerId = null, ?string $travellerType = null, ?int $typeId = null)
     {
         $this
-            ->setBirthday($birthday)
+            ->setBirthDay($birthDay)
+            ->setBirthMonth($birthMonth)
+            ->setBirthName($birthName)
+            ->setBirthYear($birthYear)
+            ->setBirthday_1($birthday_1)
+            ->setBirthdayNotProvided($birthdayNotProvided)
+            ->setContactName($contactName)
+            ->setContactPhone($contactPhone)
             ->setCustomerId($customerId)
+            ->setDisabilityDescription($disabilityDescription)
+            ->setEmail($email)
             ->setExpiryDate($expiryDate)
+            ->setFacesId($facesId)
             ->setForename($forename)
+            ->setGender($gender)
+            ->setGenderNotProvided($genderNotProvided)
+            ->setHasDisability($hasDisability)
             ->setIdCardNo($idCardNo)
             ->setIdCardType($idCardType)
             ->setIssueDate($issueDate)
             ->setIssuePlace($issuePlace)
-            ->setName($name)
-            ->setNationality($nationality)
-            ->setOrgUnit($orgUnit)
-            ->setPlaceOfBirth($placeOfBirth)
-            ->setSalutationId($salutationId)
-            ->setTitle($title)
-            ->setTravellerId($travellerId)
-            ->setTravellerType($travellerType)
-            ->setBirthDay_1($birthDay_1)
-            ->setBirthMonth($birthMonth)
-            ->setBirthName($birthName)
-            ->setBirthYear($birthYear)
-            ->setBirthdayNotProvided($birthdayNotProvided)
-            ->setContactName($contactName)
-            ->setContactPhone($contactPhone)
-            ->setDisabilityDescription($disabilityDescription)
-            ->setEmail($email)
-            ->setFacesId($facesId)
-            ->setGender($gender)
-            ->setHasDisability($hasDisability)
             ->setMailingProhibited($mailingProhibited)
             ->setMaritalStatus($maritalStatus)
             ->setMiddleName($middleName)
             ->setMiddleNameNotAvailable($middleNameNotAvailable)
+            ->setName($name)
+            ->setNationality($nationality)
             ->setNeedsBarrierFreeAccess($needsBarrierFreeAccess)
             ->setPassportExpiryDate($passportExpiryDate)
             ->setPassportIssueDate($passportIssueDate)
             ->setPassportIssuePlace($passportIssuePlace)
             ->setPassportNo($passportNo)
             ->setPhone($phone)
+            ->setPlaceOfBirth($placeOfBirth)
             ->setPosition($position)
+            ->setSalutationId($salutationId)
+            ->setTitle($title)
+            ->setTravellerId($travellerId)
+            ->setTravellerType($travellerType)
             ->setTypeId($typeId);
+    }
+    /**
+     * Get birthDay value
+     * @return int|null
+     */
+    public function getBirthDay(): ?int
+    {
+        return $this->birthDay;
+    }
+    /**
+     * Set birthDay value
+     * @param int $birthDay
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setBirthDay(?int $birthDay = null): self
+    {
+        // validation for constraint: int
+        if (!is_null($birthDay) && !(is_int($birthDay) || ctype_digit($birthDay))) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($birthDay, true), gettype($birthDay)), __LINE__);
+        }
+        $this->birthDay = $birthDay;
+        
+        return $this;
+    }
+    /**
+     * Get birthMonth value
+     * @return int|null
+     */
+    public function getBirthMonth(): ?int
+    {
+        return $this->birthMonth;
+    }
+    /**
+     * Set birthMonth value
+     * @param int $birthMonth
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setBirthMonth(?int $birthMonth = null): self
+    {
+        // validation for constraint: int
+        if (!is_null($birthMonth) && !(is_int($birthMonth) || ctype_digit($birthMonth))) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($birthMonth, true), gettype($birthMonth)), __LINE__);
+        }
+        $this->birthMonth = $birthMonth;
+        
+        return $this;
+    }
+    /**
+     * Get birthName value
+     * @return string|null
+     */
+    public function getBirthName(): ?string
+    {
+        return $this->birthName;
+    }
+    /**
+     * Set birthName value
+     * @param string $birthName
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setBirthName(?string $birthName = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($birthName) && !is_string($birthName)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($birthName, true), gettype($birthName)), __LINE__);
+        }
+        $this->birthName = $birthName;
+        
+        return $this;
+    }
+    /**
+     * Get birthYear value
+     * @return int|null
+     */
+    public function getBirthYear(): ?int
+    {
+        return $this->birthYear;
+    }
+    /**
+     * Set birthYear value
+     * @param int $birthYear
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setBirthYear(?int $birthYear = null): self
+    {
+        // validation for constraint: int
+        if (!is_null($birthYear) && !(is_int($birthYear) || ctype_digit($birthYear))) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($birthYear, true), gettype($birthYear)), __LINE__);
+        }
+        $this->birthYear = $birthYear;
+        
+        return $this;
     }
     /**
      * Get birthday value
      * @return string|null
      */
-    public function getBirthday(): ?string
+    public function getBirthday_1(): ?string
     {
         return $this->birthday;
     }
@@ -354,13 +446,82 @@ class CrmPersonTravellerDTO extends AbstractStructBase
      * @param string $birthday
      * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
      */
-    public function setBirthday(?string $birthday = null): self
+    public function setBirthday_1(?string $birthday_1 = null): self
     {
         // validation for constraint: string
-        if (!is_null($birthday) && !is_string($birthday)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($birthday, true), gettype($birthday)), __LINE__);
+        if (!is_null($birthday_1) && !is_string($birthday_1)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($birthday_1, true), gettype($birthday_1)), __LINE__);
         }
-        $this->birthday = $birthday;
+        $this->birthday = $birthday_1;
+        
+        return $this;
+    }
+    /**
+     * Get birthdayNotProvided value
+     * @return bool|null
+     */
+    public function getBirthdayNotProvided(): ?bool
+    {
+        return $this->birthdayNotProvided;
+    }
+    /**
+     * Set birthdayNotProvided value
+     * @param bool $birthdayNotProvided
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setBirthdayNotProvided(?bool $birthdayNotProvided = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($birthdayNotProvided) && !is_bool($birthdayNotProvided)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($birthdayNotProvided, true), gettype($birthdayNotProvided)), __LINE__);
+        }
+        $this->birthdayNotProvided = $birthdayNotProvided;
+        
+        return $this;
+    }
+    /**
+     * Get contactName value
+     * @return string|null
+     */
+    public function getContactName(): ?string
+    {
+        return $this->contactName;
+    }
+    /**
+     * Set contactName value
+     * @param string $contactName
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setContactName(?string $contactName = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($contactName) && !is_string($contactName)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contactName, true), gettype($contactName)), __LINE__);
+        }
+        $this->contactName = $contactName;
+        
+        return $this;
+    }
+    /**
+     * Get contactPhone value
+     * @return string|null
+     */
+    public function getContactPhone(): ?string
+    {
+        return $this->contactPhone;
+    }
+    /**
+     * Set contactPhone value
+     * @param string $contactPhone
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setContactPhone(?string $contactPhone = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($contactPhone) && !is_string($contactPhone)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contactPhone, true), gettype($contactPhone)), __LINE__);
+        }
+        $this->contactPhone = $contactPhone;
         
         return $this;
     }
@@ -388,6 +549,52 @@ class CrmPersonTravellerDTO extends AbstractStructBase
         return $this;
     }
     /**
+     * Get disabilityDescription value
+     * @return string|null
+     */
+    public function getDisabilityDescription(): ?string
+    {
+        return $this->disabilityDescription;
+    }
+    /**
+     * Set disabilityDescription value
+     * @param string $disabilityDescription
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setDisabilityDescription(?string $disabilityDescription = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($disabilityDescription) && !is_string($disabilityDescription)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($disabilityDescription, true), gettype($disabilityDescription)), __LINE__);
+        }
+        $this->disabilityDescription = $disabilityDescription;
+        
+        return $this;
+    }
+    /**
+     * Get email value
+     * @return string|null
+     */
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+    /**
+     * Set email value
+     * @param string $email
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setEmail(?string $email = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($email) && !is_string($email)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
+        }
+        $this->email = $email;
+        
+        return $this;
+    }
+    /**
      * Get expiryDate value
      * @return string|null
      */
@@ -411,6 +618,29 @@ class CrmPersonTravellerDTO extends AbstractStructBase
         return $this;
     }
     /**
+     * Get facesId value
+     * @return string|null
+     */
+    public function getFacesId(): ?string
+    {
+        return $this->facesId;
+    }
+    /**
+     * Set facesId value
+     * @param string $facesId
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setFacesId(?string $facesId = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($facesId) && !is_string($facesId)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($facesId, true), gettype($facesId)), __LINE__);
+        }
+        $this->facesId = $facesId;
+        
+        return $this;
+    }
+    /**
      * Get forename value
      * @return string|null
      */
@@ -430,6 +660,75 @@ class CrmPersonTravellerDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($forename, true), gettype($forename)), __LINE__);
         }
         $this->forename = $forename;
+        
+        return $this;
+    }
+    /**
+     * Get gender value
+     * @return int|null
+     */
+    public function getGender(): ?int
+    {
+        return $this->gender;
+    }
+    /**
+     * Set gender value
+     * @param int $gender
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setGender(?int $gender = null): self
+    {
+        // validation for constraint: int
+        if (!is_null($gender) && !(is_int($gender) || ctype_digit($gender))) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($gender, true), gettype($gender)), __LINE__);
+        }
+        $this->gender = $gender;
+        
+        return $this;
+    }
+    /**
+     * Get genderNotProvided value
+     * @return bool|null
+     */
+    public function getGenderNotProvided(): ?bool
+    {
+        return $this->genderNotProvided;
+    }
+    /**
+     * Set genderNotProvided value
+     * @param bool $genderNotProvided
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setGenderNotProvided(?bool $genderNotProvided = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($genderNotProvided) && !is_bool($genderNotProvided)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($genderNotProvided, true), gettype($genderNotProvided)), __LINE__);
+        }
+        $this->genderNotProvided = $genderNotProvided;
+        
+        return $this;
+    }
+    /**
+     * Get hasDisability value
+     * @return bool|null
+     */
+    public function getHasDisability(): ?bool
+    {
+        return $this->hasDisability;
+    }
+    /**
+     * Set hasDisability value
+     * @param bool $hasDisability
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setHasDisability(?bool $hasDisability = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($hasDisability) && !is_bool($hasDisability)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($hasDisability, true), gettype($hasDisability)), __LINE__);
+        }
+        $this->hasDisability = $hasDisability;
         
         return $this;
     }
@@ -526,466 +825,6 @@ class CrmPersonTravellerDTO extends AbstractStructBase
         return $this;
     }
     /**
-     * Get name value
-     * @return string|null
-     */
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-    /**
-     * Set name value
-     * @param string $name
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setName(?string $name = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($name) && !is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
-        }
-        $this->name = $name;
-        
-        return $this;
-    }
-    /**
-     * Get nationality value
-     * @return string|null
-     */
-    public function getNationality(): ?string
-    {
-        return $this->nationality;
-    }
-    /**
-     * Set nationality value
-     * @param string $nationality
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setNationality(?string $nationality = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($nationality) && !is_string($nationality)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nationality, true), gettype($nationality)), __LINE__);
-        }
-        $this->nationality = $nationality;
-        
-        return $this;
-    }
-    /**
-     * Get orgUnit value
-     * @return string|null
-     */
-    public function getOrgUnit(): ?string
-    {
-        return $this->orgUnit;
-    }
-    /**
-     * Set orgUnit value
-     * @param string $orgUnit
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setOrgUnit(?string $orgUnit = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($orgUnit) && !is_string($orgUnit)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($orgUnit, true), gettype($orgUnit)), __LINE__);
-        }
-        $this->orgUnit = $orgUnit;
-        
-        return $this;
-    }
-    /**
-     * Get placeOfBirth value
-     * @return string|null
-     */
-    public function getPlaceOfBirth(): ?string
-    {
-        return $this->placeOfBirth;
-    }
-    /**
-     * Set placeOfBirth value
-     * @param string $placeOfBirth
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setPlaceOfBirth(?string $placeOfBirth = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($placeOfBirth) && !is_string($placeOfBirth)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($placeOfBirth, true), gettype($placeOfBirth)), __LINE__);
-        }
-        $this->placeOfBirth = $placeOfBirth;
-        
-        return $this;
-    }
-    /**
-     * Get salutationId value
-     * @return string|null
-     */
-    public function getSalutationId(): ?string
-    {
-        return $this->salutationId;
-    }
-    /**
-     * Set salutationId value
-     * @param string $salutationId
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setSalutationId(?string $salutationId = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($salutationId) && !is_string($salutationId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($salutationId, true), gettype($salutationId)), __LINE__);
-        }
-        $this->salutationId = $salutationId;
-        
-        return $this;
-    }
-    /**
-     * Get title value
-     * @return string|null
-     */
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-    /**
-     * Set title value
-     * @param string $title
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setTitle(?string $title = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($title) && !is_string($title)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
-        }
-        $this->title = $title;
-        
-        return $this;
-    }
-    /**
-     * Get travellerId value
-     * @return int|null
-     */
-    public function getTravellerId(): ?int
-    {
-        return $this->travellerId;
-    }
-    /**
-     * Set travellerId value
-     * @param int $travellerId
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setTravellerId(?int $travellerId = null): self
-    {
-        // validation for constraint: int
-        if (!is_null($travellerId) && !(is_int($travellerId) || ctype_digit($travellerId))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($travellerId, true), gettype($travellerId)), __LINE__);
-        }
-        $this->travellerId = $travellerId;
-        
-        return $this;
-    }
-    /**
-     * Get travellerType value
-     * @return string|null
-     */
-    public function getTravellerType(): ?string
-    {
-        return $this->travellerType;
-    }
-    /**
-     * Set travellerType value
-     * @param string $travellerType
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setTravellerType(?string $travellerType = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($travellerType) && !is_string($travellerType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travellerType, true), gettype($travellerType)), __LINE__);
-        }
-        $this->travellerType = $travellerType;
-        
-        return $this;
-    }
-    /**
-     * Get birthDay value
-     * @return int|null
-     */
-    public function getBirthDay_1(): ?int
-    {
-        return $this->birthDay;
-    }
-    /**
-     * Set birthDay value
-     * @param int $birthDay
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setBirthDay_1(?int $birthDay_1 = null): self
-    {
-        // validation for constraint: int
-        if (!is_null($birthDay_1) && !(is_int($birthDay_1) || ctype_digit($birthDay_1))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($birthDay_1, true), gettype($birthDay_1)), __LINE__);
-        }
-        $this->birthDay = $birthDay_1;
-        
-        return $this;
-    }
-    /**
-     * Get birthMonth value
-     * @return int|null
-     */
-    public function getBirthMonth(): ?int
-    {
-        return $this->birthMonth;
-    }
-    /**
-     * Set birthMonth value
-     * @param int $birthMonth
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setBirthMonth(?int $birthMonth = null): self
-    {
-        // validation for constraint: int
-        if (!is_null($birthMonth) && !(is_int($birthMonth) || ctype_digit($birthMonth))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($birthMonth, true), gettype($birthMonth)), __LINE__);
-        }
-        $this->birthMonth = $birthMonth;
-        
-        return $this;
-    }
-    /**
-     * Get birthName value
-     * @return string|null
-     */
-    public function getBirthName(): ?string
-    {
-        return $this->birthName;
-    }
-    /**
-     * Set birthName value
-     * @param string $birthName
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setBirthName(?string $birthName = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($birthName) && !is_string($birthName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($birthName, true), gettype($birthName)), __LINE__);
-        }
-        $this->birthName = $birthName;
-        
-        return $this;
-    }
-    /**
-     * Get birthYear value
-     * @return int|null
-     */
-    public function getBirthYear(): ?int
-    {
-        return $this->birthYear;
-    }
-    /**
-     * Set birthYear value
-     * @param int $birthYear
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setBirthYear(?int $birthYear = null): self
-    {
-        // validation for constraint: int
-        if (!is_null($birthYear) && !(is_int($birthYear) || ctype_digit($birthYear))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($birthYear, true), gettype($birthYear)), __LINE__);
-        }
-        $this->birthYear = $birthYear;
-        
-        return $this;
-    }
-    /**
-     * Get birthdayNotProvided value
-     * @return bool|null
-     */
-    public function getBirthdayNotProvided(): ?bool
-    {
-        return $this->birthdayNotProvided;
-    }
-    /**
-     * Set birthdayNotProvided value
-     * @param bool $birthdayNotProvided
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setBirthdayNotProvided(?bool $birthdayNotProvided = null): self
-    {
-        // validation for constraint: boolean
-        if (!is_null($birthdayNotProvided) && !is_bool($birthdayNotProvided)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($birthdayNotProvided, true), gettype($birthdayNotProvided)), __LINE__);
-        }
-        $this->birthdayNotProvided = $birthdayNotProvided;
-        
-        return $this;
-    }
-    /**
-     * Get contactName value
-     * @return string|null
-     */
-    public function getContactName(): ?string
-    {
-        return $this->contactName;
-    }
-    /**
-     * Set contactName value
-     * @param string $contactName
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setContactName(?string $contactName = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($contactName) && !is_string($contactName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contactName, true), gettype($contactName)), __LINE__);
-        }
-        $this->contactName = $contactName;
-        
-        return $this;
-    }
-    /**
-     * Get contactPhone value
-     * @return string|null
-     */
-    public function getContactPhone(): ?string
-    {
-        return $this->contactPhone;
-    }
-    /**
-     * Set contactPhone value
-     * @param string $contactPhone
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setContactPhone(?string $contactPhone = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($contactPhone) && !is_string($contactPhone)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contactPhone, true), gettype($contactPhone)), __LINE__);
-        }
-        $this->contactPhone = $contactPhone;
-        
-        return $this;
-    }
-    /**
-     * Get disabilityDescription value
-     * @return string|null
-     */
-    public function getDisabilityDescription(): ?string
-    {
-        return $this->disabilityDescription;
-    }
-    /**
-     * Set disabilityDescription value
-     * @param string $disabilityDescription
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setDisabilityDescription(?string $disabilityDescription = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($disabilityDescription) && !is_string($disabilityDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($disabilityDescription, true), gettype($disabilityDescription)), __LINE__);
-        }
-        $this->disabilityDescription = $disabilityDescription;
-        
-        return $this;
-    }
-    /**
-     * Get email value
-     * @return string|null
-     */
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-    /**
-     * Set email value
-     * @param string $email
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setEmail(?string $email = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($email) && !is_string($email)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
-        }
-        $this->email = $email;
-        
-        return $this;
-    }
-    /**
-     * Get facesId value
-     * @return string|null
-     */
-    public function getFacesId(): ?string
-    {
-        return $this->facesId;
-    }
-    /**
-     * Set facesId value
-     * @param string $facesId
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setFacesId(?string $facesId = null): self
-    {
-        // validation for constraint: string
-        if (!is_null($facesId) && !is_string($facesId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($facesId, true), gettype($facesId)), __LINE__);
-        }
-        $this->facesId = $facesId;
-        
-        return $this;
-    }
-    /**
-     * Get gender value
-     * @return int|null
-     */
-    public function getGender(): ?int
-    {
-        return $this->gender;
-    }
-    /**
-     * Set gender value
-     * @param int $gender
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setGender(?int $gender = null): self
-    {
-        // validation for constraint: int
-        if (!is_null($gender) && !(is_int($gender) || ctype_digit($gender))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($gender, true), gettype($gender)), __LINE__);
-        }
-        $this->gender = $gender;
-        
-        return $this;
-    }
-    /**
-     * Get hasDisability value
-     * @return bool|null
-     */
-    public function getHasDisability(): ?bool
-    {
-        return $this->hasDisability;
-    }
-    /**
-     * Set hasDisability value
-     * @param bool $hasDisability
-     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
-     */
-    public function setHasDisability(?bool $hasDisability = null): self
-    {
-        // validation for constraint: boolean
-        if (!is_null($hasDisability) && !is_bool($hasDisability)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($hasDisability, true), gettype($hasDisability)), __LINE__);
-        }
-        $this->hasDisability = $hasDisability;
-        
-        return $this;
-    }
-    /**
      * Get mailingProhibited value
      * @return bool|null
      */
@@ -1074,6 +913,52 @@ class CrmPersonTravellerDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($middleNameNotAvailable, true), gettype($middleNameNotAvailable)), __LINE__);
         }
         $this->middleNameNotAvailable = $middleNameNotAvailable;
+        
+        return $this;
+    }
+    /**
+     * Get name value
+     * @return string|null
+     */
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+    /**
+     * Set name value
+     * @param string $name
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setName(?string $name = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($name) && !is_string($name)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
+        }
+        $this->name = $name;
+        
+        return $this;
+    }
+    /**
+     * Get nationality value
+     * @return string|null
+     */
+    public function getNationality(): ?string
+    {
+        return $this->nationality;
+    }
+    /**
+     * Set nationality value
+     * @param string $nationality
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setNationality(?string $nationality = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($nationality) && !is_string($nationality)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nationality, true), gettype($nationality)), __LINE__);
+        }
+        $this->nationality = $nationality;
         
         return $this;
     }
@@ -1216,6 +1101,29 @@ class CrmPersonTravellerDTO extends AbstractStructBase
         return $this;
     }
     /**
+     * Get placeOfBirth value
+     * @return string|null
+     */
+    public function getPlaceOfBirth(): ?string
+    {
+        return $this->placeOfBirth;
+    }
+    /**
+     * Set placeOfBirth value
+     * @param string $placeOfBirth
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setPlaceOfBirth(?string $placeOfBirth = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($placeOfBirth) && !is_string($placeOfBirth)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($placeOfBirth, true), gettype($placeOfBirth)), __LINE__);
+        }
+        $this->placeOfBirth = $placeOfBirth;
+        
+        return $this;
+    }
+    /**
      * Get position value
      * @return int|null
      */
@@ -1235,6 +1143,98 @@ class CrmPersonTravellerDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($position, true), gettype($position)), __LINE__);
         }
         $this->position = $position;
+        
+        return $this;
+    }
+    /**
+     * Get salutationId value
+     * @return string|null
+     */
+    public function getSalutationId(): ?string
+    {
+        return $this->salutationId;
+    }
+    /**
+     * Set salutationId value
+     * @param string $salutationId
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setSalutationId(?string $salutationId = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($salutationId) && !is_string($salutationId)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($salutationId, true), gettype($salutationId)), __LINE__);
+        }
+        $this->salutationId = $salutationId;
+        
+        return $this;
+    }
+    /**
+     * Get title value
+     * @return string|null
+     */
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+    /**
+     * Set title value
+     * @param string $title
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setTitle(?string $title = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($title) && !is_string($title)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($title, true), gettype($title)), __LINE__);
+        }
+        $this->title = $title;
+        
+        return $this;
+    }
+    /**
+     * Get travellerId value
+     * @return int|null
+     */
+    public function getTravellerId(): ?int
+    {
+        return $this->travellerId;
+    }
+    /**
+     * Set travellerId value
+     * @param int $travellerId
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setTravellerId(?int $travellerId = null): self
+    {
+        // validation for constraint: int
+        if (!is_null($travellerId) && !(is_int($travellerId) || ctype_digit($travellerId))) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($travellerId, true), gettype($travellerId)), __LINE__);
+        }
+        $this->travellerId = $travellerId;
+        
+        return $this;
+    }
+    /**
+     * Get travellerType value
+     * @return string|null
+     */
+    public function getTravellerType(): ?string
+    {
+        return $this->travellerType;
+    }
+    /**
+     * Set travellerType value
+     * @param string $travellerType
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonTravellerDTO
+     */
+    public function setTravellerType(?string $travellerType = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($travellerType) && !is_string($travellerType)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travellerType, true), gettype($travellerType)), __LINE__);
+        }
+        $this->travellerType = $travellerType;
         
         return $this;
     }

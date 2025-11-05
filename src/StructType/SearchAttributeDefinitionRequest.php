@@ -35,23 +35,33 @@ class SearchAttributeDefinitionRequest extends AbstractStructBase
      */
     protected ?int $type = null;
     /**
+     * The searchRootUnit
+     * Meta information extracted from the WSDL
+     * - default: false
+     * @var bool|null
+     */
+    protected ?bool $searchRootUnit = null;
+    /**
      * Constructor method for SearchAttributeDefinitionRequest
      * @uses SearchAttributeDefinitionRequest::setUnitName()
      * @uses SearchAttributeDefinitionRequest::setAttributeName()
      * @uses SearchAttributeDefinitionRequest::setContextId()
      * @uses SearchAttributeDefinitionRequest::setType()
+     * @uses SearchAttributeDefinitionRequest::setSearchRootUnit()
      * @param string $unitName
      * @param string $attributeName
      * @param string $contextId
      * @param int $type
+     * @param bool $searchRootUnit
      */
-    public function __construct(?string $unitName = null, ?string $attributeName = null, ?string $contextId = null, ?int $type = null)
+    public function __construct(?string $unitName = null, ?string $attributeName = null, ?string $contextId = null, ?int $type = null, ?bool $searchRootUnit = false)
     {
         $this
             ->setUnitName($unitName)
             ->setAttributeName($attributeName)
             ->setContextId($contextId)
-            ->setType($type);
+            ->setType($type)
+            ->setSearchRootUnit($searchRootUnit);
     }
     /**
      * Get unitName value
@@ -142,6 +152,29 @@ class SearchAttributeDefinitionRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($type, true), gettype($type)), __LINE__);
         }
         $this->type = $type;
+        
+        return $this;
+    }
+    /**
+     * Get searchRootUnit value
+     * @return bool|null
+     */
+    public function getSearchRootUnit(): ?bool
+    {
+        return $this->searchRootUnit;
+    }
+    /**
+     * Set searchRootUnit value
+     * @param bool $searchRootUnit
+     * @return \Pggns\MidocoApi\Mis\StructType\SearchAttributeDefinitionRequest
+     */
+    public function setSearchRootUnit(?bool $searchRootUnit = false): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($searchRootUnit) && !is_bool($searchRootUnit)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($searchRootUnit, true), gettype($searchRootUnit)), __LINE__);
+        }
+        $this->searchRootUnit = $searchRootUnit;
         
         return $this;
     }

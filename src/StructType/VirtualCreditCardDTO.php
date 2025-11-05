@@ -85,6 +85,11 @@ class VirtualCreditCardDTO extends AbstractStructBase
      */
     protected ?int $documentNo = null;
     /**
+     * The externalCardId
+     * @var string|null
+     */
+    protected ?string $externalCardId = null;
+    /**
      * The isActive
      * @var bool|null
      */
@@ -165,6 +170,11 @@ class VirtualCreditCardDTO extends AbstractStructBase
      */
     protected ?string $transactionCurrency = null;
     /**
+     * The travelCardSubtype
+     * @var string|null
+     */
+    protected ?string $travelCardSubtype = null;
+    /**
      * The usedAdapter
      * @var string|null
      */
@@ -210,6 +220,7 @@ class VirtualCreditCardDTO extends AbstractStructBase
      * @uses VirtualCreditCardDTO::setCustomerId()
      * @uses VirtualCreditCardDTO::setDocumentId()
      * @uses VirtualCreditCardDTO::setDocumentNo()
+     * @uses VirtualCreditCardDTO::setExternalCardId()
      * @uses VirtualCreditCardDTO::setIsActive()
      * @uses VirtualCreditCardDTO::setIssuer()
      * @uses VirtualCreditCardDTO::setItemId()
@@ -226,6 +237,7 @@ class VirtualCreditCardDTO extends AbstractStructBase
      * @uses VirtualCreditCardDTO::setSupplierId()
      * @uses VirtualCreditCardDTO::setTokenChecked()
      * @uses VirtualCreditCardDTO::setTransactionCurrency()
+     * @uses VirtualCreditCardDTO::setTravelCardSubtype()
      * @uses VirtualCreditCardDTO::setUsedAdapter()
      * @uses VirtualCreditCardDTO::setValidFrom()
      * @uses VirtualCreditCardDTO::setValidMonth()
@@ -246,6 +258,7 @@ class VirtualCreditCardDTO extends AbstractStructBase
      * @param int $customerId
      * @param int $documentId
      * @param int $documentNo
+     * @param string $externalCardId
      * @param bool $isActive
      * @param string $issuer
      * @param int $itemId
@@ -262,6 +275,7 @@ class VirtualCreditCardDTO extends AbstractStructBase
      * @param string $supplierId
      * @param bool $tokenChecked
      * @param string $transactionCurrency
+     * @param string $travelCardSubtype
      * @param string $usedAdapter
      * @param string $validFrom
      * @param int $validMonth
@@ -269,7 +283,7 @@ class VirtualCreditCardDTO extends AbstractStructBase
      * @param int $validYear
      * @param int $virtualCardId
      */
-    public function __construct(?string $accountId = null, ?string $addressline1 = null, ?string $addressline2 = null, ?string $addressline3 = null, ?string $addressline4 = null, ?string $avv = null, ?string $bookingId = null, ?string $cardNo = null, ?string $cardType = null, ?string $creationTimestamp = null, ?int $creationUser = null, ?int $customerId = null, ?int $documentId = null, ?int $documentNo = null, ?bool $isActive = null, ?string $issuer = null, ?int $itemId = null, ?float $limitAmount = null, ?string $limitCurrency = null, ?string $merchantCountry = null, ?string $merchantName = null, ?string $modifyTimestamp = null, ?int $modifyUser = null, ?int $orderId = null, ?int $orderNo = null, ?string $owner = null, ?string $serviceType = null, ?string $supplierId = null, ?bool $tokenChecked = null, ?string $transactionCurrency = null, ?string $usedAdapter = null, ?string $validFrom = null, ?int $validMonth = null, ?string $validTo = null, ?int $validYear = null, ?int $virtualCardId = null)
+    public function __construct(?string $accountId = null, ?string $addressline1 = null, ?string $addressline2 = null, ?string $addressline3 = null, ?string $addressline4 = null, ?string $avv = null, ?string $bookingId = null, ?string $cardNo = null, ?string $cardType = null, ?string $creationTimestamp = null, ?int $creationUser = null, ?int $customerId = null, ?int $documentId = null, ?int $documentNo = null, ?string $externalCardId = null, ?bool $isActive = null, ?string $issuer = null, ?int $itemId = null, ?float $limitAmount = null, ?string $limitCurrency = null, ?string $merchantCountry = null, ?string $merchantName = null, ?string $modifyTimestamp = null, ?int $modifyUser = null, ?int $orderId = null, ?int $orderNo = null, ?string $owner = null, ?string $serviceType = null, ?string $supplierId = null, ?bool $tokenChecked = null, ?string $transactionCurrency = null, ?string $travelCardSubtype = null, ?string $usedAdapter = null, ?string $validFrom = null, ?int $validMonth = null, ?string $validTo = null, ?int $validYear = null, ?int $virtualCardId = null)
     {
         $this
             ->setAccountId($accountId)
@@ -286,6 +300,7 @@ class VirtualCreditCardDTO extends AbstractStructBase
             ->setCustomerId($customerId)
             ->setDocumentId($documentId)
             ->setDocumentNo($documentNo)
+            ->setExternalCardId($externalCardId)
             ->setIsActive($isActive)
             ->setIssuer($issuer)
             ->setItemId($itemId)
@@ -302,6 +317,7 @@ class VirtualCreditCardDTO extends AbstractStructBase
             ->setSupplierId($supplierId)
             ->setTokenChecked($tokenChecked)
             ->setTransactionCurrency($transactionCurrency)
+            ->setTravelCardSubtype($travelCardSubtype)
             ->setUsedAdapter($usedAdapter)
             ->setValidFrom($validFrom)
             ->setValidMonth($validMonth)
@@ -628,6 +644,29 @@ class VirtualCreditCardDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($documentNo, true), gettype($documentNo)), __LINE__);
         }
         $this->documentNo = $documentNo;
+        
+        return $this;
+    }
+    /**
+     * Get externalCardId value
+     * @return string|null
+     */
+    public function getExternalCardId(): ?string
+    {
+        return $this->externalCardId;
+    }
+    /**
+     * Set externalCardId value
+     * @param string $externalCardId
+     * @return \Pggns\MidocoApi\Mis\StructType\VirtualCreditCardDTO
+     */
+    public function setExternalCardId(?string $externalCardId = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($externalCardId) && !is_string($externalCardId)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalCardId, true), gettype($externalCardId)), __LINE__);
+        }
+        $this->externalCardId = $externalCardId;
         
         return $this;
     }
@@ -996,6 +1035,29 @@ class VirtualCreditCardDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionCurrency, true), gettype($transactionCurrency)), __LINE__);
         }
         $this->transactionCurrency = $transactionCurrency;
+        
+        return $this;
+    }
+    /**
+     * Get travelCardSubtype value
+     * @return string|null
+     */
+    public function getTravelCardSubtype(): ?string
+    {
+        return $this->travelCardSubtype;
+    }
+    /**
+     * Set travelCardSubtype value
+     * @param string $travelCardSubtype
+     * @return \Pggns\MidocoApi\Mis\StructType\VirtualCreditCardDTO
+     */
+    public function setTravelCardSubtype(?string $travelCardSubtype = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($travelCardSubtype) && !is_string($travelCardSubtype)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelCardSubtype, true), gettype($travelCardSubtype)), __LINE__);
+        }
+        $this->travelCardSubtype = $travelCardSubtype;
         
         return $this;
     }

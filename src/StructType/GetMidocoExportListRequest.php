@@ -57,6 +57,11 @@ class GetMidocoExportListRequest extends AbstractStructBase
      */
     protected ?string $accountId4Email = null;
     /**
+     * The useCustomerLanguage
+     * @var bool|null
+     */
+    protected ?bool $useCustomerLanguage = null;
+    /**
      * Constructor method for GetMidocoExportListRequest
      * @uses GetMidocoExportListRequest::setDtos()
      * @uses GetMidocoExportListRequest::setKeyValue()
@@ -65,6 +70,7 @@ class GetMidocoExportListRequest extends AbstractStructBase
      * @uses GetMidocoExportListRequest::setFormat()
      * @uses GetMidocoExportListRequest::setEmailFile()
      * @uses GetMidocoExportListRequest::setAccountId4Email()
+     * @uses GetMidocoExportListRequest::setUseCustomerLanguage()
      * @param string[] $dtos
      * @param \Pggns\MidocoApi\Mis\StructType\KeyValue[] $keyValue
      * @param string $dtoClassName
@@ -72,8 +78,9 @@ class GetMidocoExportListRequest extends AbstractStructBase
      * @param string $format
      * @param bool $emailFile
      * @param string $accountId4Email
+     * @param bool $useCustomerLanguage
      */
-    public function __construct(?array $dtos = null, ?array $keyValue = null, ?string $dtoClassName = null, ?string $reportName = null, ?string $format = null, ?bool $emailFile = null, ?string $accountId4Email = null)
+    public function __construct(?array $dtos = null, ?array $keyValue = null, ?string $dtoClassName = null, ?string $reportName = null, ?string $format = null, ?bool $emailFile = null, ?string $accountId4Email = null, ?bool $useCustomerLanguage = null)
     {
         $this
             ->setDtos($dtos)
@@ -82,7 +89,8 @@ class GetMidocoExportListRequest extends AbstractStructBase
             ->setReportName($reportName)
             ->setFormat($format)
             ->setEmailFile($emailFile)
-            ->setAccountId4Email($accountId4Email);
+            ->setAccountId4Email($accountId4Email)
+            ->setUseCustomerLanguage($useCustomerLanguage);
     }
     /**
      * Get dtos value
@@ -330,6 +338,29 @@ class GetMidocoExportListRequest extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountId4Email, true), gettype($accountId4Email)), __LINE__);
         }
         $this->accountId4Email = $accountId4Email;
+        
+        return $this;
+    }
+    /**
+     * Get useCustomerLanguage value
+     * @return bool|null
+     */
+    public function getUseCustomerLanguage(): ?bool
+    {
+        return $this->useCustomerLanguage;
+    }
+    /**
+     * Set useCustomerLanguage value
+     * @param bool $useCustomerLanguage
+     * @return \Pggns\MidocoApi\Mis\StructType\GetMidocoExportListRequest
+     */
+    public function setUseCustomerLanguage(?bool $useCustomerLanguage = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($useCustomerLanguage) && !is_bool($useCustomerLanguage)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($useCustomerLanguage, true), gettype($useCustomerLanguage)), __LINE__);
+        }
+        $this->useCustomerLanguage = $useCustomerLanguage;
         
         return $this;
     }

@@ -20,14 +20,24 @@ class Generate2FaAuthResponse extends AbstractStructBase
      */
     protected ?string $qrdata = null;
     /**
+     * The authCertificate
+     * Meta information extracted from the WSDL
+     * - minOccurs: 0
+     * @var string|null
+     */
+    protected ?string $authCertificate = null;
+    /**
      * Constructor method for Generate2FaAuthResponse
      * @uses Generate2FaAuthResponse::setQrdata()
+     * @uses Generate2FaAuthResponse::setAuthCertificate()
      * @param string $qrdata
+     * @param string $authCertificate
      */
-    public function __construct(?string $qrdata = null)
+    public function __construct(?string $qrdata = null, ?string $authCertificate = null)
     {
         $this
-            ->setQrdata($qrdata);
+            ->setQrdata($qrdata)
+            ->setAuthCertificate($authCertificate);
     }
     /**
      * Get qrdata value
@@ -49,6 +59,29 @@ class Generate2FaAuthResponse extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($qrdata, true), gettype($qrdata)), __LINE__);
         }
         $this->qrdata = $qrdata;
+        
+        return $this;
+    }
+    /**
+     * Get authCertificate value
+     * @return string|null
+     */
+    public function getAuthCertificate(): ?string
+    {
+        return $this->authCertificate;
+    }
+    /**
+     * Set authCertificate value
+     * @param string $authCertificate
+     * @return \Pggns\MidocoApi\Mis\StructType\Generate2FaAuthResponse
+     */
+    public function setAuthCertificate(?string $authCertificate = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($authCertificate) && !is_string($authCertificate)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authCertificate, true), gettype($authCertificate)), __LINE__);
+        }
+        $this->authCertificate = $authCertificate;
         
         return $this;
     }

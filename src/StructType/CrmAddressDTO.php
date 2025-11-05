@@ -115,6 +115,11 @@ class CrmAddressDTO extends AbstractStructBase
      */
     protected ?string $state = null;
     /**
+     * The stateId
+     * @var string|null
+     */
+    protected ?string $stateId = null;
+    /**
      * The street
      * @var string|null
      */
@@ -151,6 +156,7 @@ class CrmAddressDTO extends AbstractStructBase
      * @uses CrmAddressDTO::setPostOfficeBox()
      * @uses CrmAddressDTO::setPostalCode()
      * @uses CrmAddressDTO::setState()
+     * @uses CrmAddressDTO::setStateId()
      * @uses CrmAddressDTO::setStreet()
      * @uses CrmAddressDTO::setStreetNo()
      * @uses CrmAddressDTO::setValidated()
@@ -174,11 +180,12 @@ class CrmAddressDTO extends AbstractStructBase
      * @param string $postOfficeBox
      * @param string $postalCode
      * @param string $state
+     * @param string $stateId
      * @param string $street
      * @param string $streetNo
      * @param bool $validated
      */
-    public function __construct(?int $addressId = null, ?int $addressTypeId = null, ?string $checkStatus = null, ?string $city = null, ?string $consentTimestamp = null, ?string $countryCode = null, ?string $creationDate = null, ?int $creationUser = null, ?int $customerId = null, ?string $endorsement = null, ?string $externalConsentId = null, ?bool $mailingProhibited = null, ?string $mailingStatus = null, ?string $mailingStatusModifyDate = null, ?int $mailingStatusModifyUser = null, ?string $modifyDate = null, ?int $modifyUser = null, ?string $postOfficeBox = null, ?string $postalCode = null, ?string $state = null, ?string $street = null, ?string $streetNo = null, ?bool $validated = null)
+    public function __construct(?int $addressId = null, ?int $addressTypeId = null, ?string $checkStatus = null, ?string $city = null, ?string $consentTimestamp = null, ?string $countryCode = null, ?string $creationDate = null, ?int $creationUser = null, ?int $customerId = null, ?string $endorsement = null, ?string $externalConsentId = null, ?bool $mailingProhibited = null, ?string $mailingStatus = null, ?string $mailingStatusModifyDate = null, ?int $mailingStatusModifyUser = null, ?string $modifyDate = null, ?int $modifyUser = null, ?string $postOfficeBox = null, ?string $postalCode = null, ?string $state = null, ?string $stateId = null, ?string $street = null, ?string $streetNo = null, ?bool $validated = null)
     {
         $this
             ->setAddressId($addressId)
@@ -201,6 +208,7 @@ class CrmAddressDTO extends AbstractStructBase
             ->setPostOfficeBox($postOfficeBox)
             ->setPostalCode($postalCode)
             ->setState($state)
+            ->setStateId($stateId)
             ->setStreet($street)
             ->setStreetNo($streetNo)
             ->setValidated($validated);
@@ -662,6 +670,29 @@ class CrmAddressDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($state, true), gettype($state)), __LINE__);
         }
         $this->state = $state;
+        
+        return $this;
+    }
+    /**
+     * Get stateId value
+     * @return string|null
+     */
+    public function getStateId(): ?string
+    {
+        return $this->stateId;
+    }
+    /**
+     * Set stateId value
+     * @param string $stateId
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmAddressDTO
+     */
+    public function setStateId(?string $stateId = null): self
+    {
+        // validation for constraint: string
+        if (!is_null($stateId) && !is_string($stateId)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($stateId, true), gettype($stateId)), __LINE__);
+        }
+        $this->stateId = $stateId;
         
         return $this;
     }

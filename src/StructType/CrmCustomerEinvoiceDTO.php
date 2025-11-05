@@ -25,6 +25,11 @@ class CrmCustomerEinvoiceDTO extends AbstractStructBase
      */
     protected ?string $email = null;
     /**
+     * The embedPdf
+     * @var bool|null
+     */
+    protected ?bool $embedPdf = null;
+    /**
      * The gateway
      * @var string|null
      */
@@ -68,6 +73,7 @@ class CrmCustomerEinvoiceDTO extends AbstractStructBase
      * Constructor method for CrmCustomerEinvoiceDTO
      * @uses CrmCustomerEinvoiceDTO::setCustomerId()
      * @uses CrmCustomerEinvoiceDTO::setEmail()
+     * @uses CrmCustomerEinvoiceDTO::setEmbedPdf()
      * @uses CrmCustomerEinvoiceDTO::setGateway()
      * @uses CrmCustomerEinvoiceDTO::setIsOrderRefRequired()
      * @uses CrmCustomerEinvoiceDTO::setIsRoutingIdRequired()
@@ -78,6 +84,7 @@ class CrmCustomerEinvoiceDTO extends AbstractStructBase
      * @uses CrmCustomerEinvoiceDTO::setType()
      * @param int $customerId
      * @param string $email
+     * @param bool $embedPdf
      * @param string $gateway
      * @param bool $isOrderRefRequired
      * @param bool $isRoutingIdRequired
@@ -87,11 +94,12 @@ class CrmCustomerEinvoiceDTO extends AbstractStructBase
      * @param string $supplierNo
      * @param string $type
      */
-    public function __construct(?int $customerId = null, ?string $email = null, ?string $gateway = null, ?bool $isOrderRefRequired = null, ?bool $isRoutingIdRequired = null, ?bool $isSupplierNoRequired = null, ?string $routingId = null, ?string $sellerTradeParty = null, ?string $supplierNo = null, ?string $type = null)
+    public function __construct(?int $customerId = null, ?string $email = null, ?bool $embedPdf = null, ?string $gateway = null, ?bool $isOrderRefRequired = null, ?bool $isRoutingIdRequired = null, ?bool $isSupplierNoRequired = null, ?string $routingId = null, ?string $sellerTradeParty = null, ?string $supplierNo = null, ?string $type = null)
     {
         $this
             ->setCustomerId($customerId)
             ->setEmail($email)
+            ->setEmbedPdf($embedPdf)
             ->setGateway($gateway)
             ->setIsOrderRefRequired($isOrderRefRequired)
             ->setIsRoutingIdRequired($isRoutingIdRequired)
@@ -144,6 +152,29 @@ class CrmCustomerEinvoiceDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($email, true), gettype($email)), __LINE__);
         }
         $this->email = $email;
+        
+        return $this;
+    }
+    /**
+     * Get embedPdf value
+     * @return bool|null
+     */
+    public function getEmbedPdf(): ?bool
+    {
+        return $this->embedPdf;
+    }
+    /**
+     * Set embedPdf value
+     * @param bool $embedPdf
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmCustomerEinvoiceDTO
+     */
+    public function setEmbedPdf(?bool $embedPdf = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($embedPdf) && !is_bool($embedPdf)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($embedPdf, true), gettype($embedPdf)), __LINE__);
+        }
+        $this->embedPdf = $embedPdf;
         
         return $this;
     }

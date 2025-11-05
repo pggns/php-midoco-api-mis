@@ -35,6 +35,11 @@ class AttributeDefinitionDTO extends AbstractStructBase
      */
     protected ?bool $exportToReporting = null;
     /**
+     * The isInheritable
+     * @var bool|null
+     */
+    protected ?bool $isInheritable = null;
+    /**
      * The isMandatory
      * @var bool|null
      */
@@ -80,6 +85,7 @@ class AttributeDefinitionDTO extends AbstractStructBase
      * @uses AttributeDefinitionDTO::setContextId()
      * @uses AttributeDefinitionDTO::setDefaultValue()
      * @uses AttributeDefinitionDTO::setExportToReporting()
+     * @uses AttributeDefinitionDTO::setIsInheritable()
      * @uses AttributeDefinitionDTO::setIsMandatory()
      * @uses AttributeDefinitionDTO::setIsMarketingcode()
      * @uses AttributeDefinitionDTO::setIsVisible()
@@ -92,6 +98,7 @@ class AttributeDefinitionDTO extends AbstractStructBase
      * @param string $contextId
      * @param string $defaultValue
      * @param bool $exportToReporting
+     * @param bool $isInheritable
      * @param bool $isMandatory
      * @param bool $isMarketingcode
      * @param bool $isVisible
@@ -101,13 +108,14 @@ class AttributeDefinitionDTO extends AbstractStructBase
      * @param int $type
      * @param string $unitName
      */
-    public function __construct(?string $attributeName = null, ?string $contextId = null, ?string $defaultValue = null, ?bool $exportToReporting = null, ?bool $isMandatory = null, ?bool $isMarketingcode = null, ?bool $isVisible = null, ?int $length = null, ?int $prec = null, ?bool $requiresUpdateRight = null, ?int $type = null, ?string $unitName = null)
+    public function __construct(?string $attributeName = null, ?string $contextId = null, ?string $defaultValue = null, ?bool $exportToReporting = null, ?bool $isInheritable = null, ?bool $isMandatory = null, ?bool $isMarketingcode = null, ?bool $isVisible = null, ?int $length = null, ?int $prec = null, ?bool $requiresUpdateRight = null, ?int $type = null, ?string $unitName = null)
     {
         $this
             ->setAttributeName($attributeName)
             ->setContextId($contextId)
             ->setDefaultValue($defaultValue)
             ->setExportToReporting($exportToReporting)
+            ->setIsInheritable($isInheritable)
             ->setIsMandatory($isMandatory)
             ->setIsMarketingcode($isMarketingcode)
             ->setIsVisible($isVisible)
@@ -206,6 +214,29 @@ class AttributeDefinitionDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($exportToReporting, true), gettype($exportToReporting)), __LINE__);
         }
         $this->exportToReporting = $exportToReporting;
+        
+        return $this;
+    }
+    /**
+     * Get isInheritable value
+     * @return bool|null
+     */
+    public function getIsInheritable(): ?bool
+    {
+        return $this->isInheritable;
+    }
+    /**
+     * Set isInheritable value
+     * @param bool $isInheritable
+     * @return \Pggns\MidocoApi\Mis\StructType\AttributeDefinitionDTO
+     */
+    public function setIsInheritable(?bool $isInheritable = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($isInheritable) && !is_bool($isInheritable)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isInheritable, true), gettype($isInheritable)), __LINE__);
+        }
+        $this->isInheritable = $isInheritable;
         
         return $this;
     }

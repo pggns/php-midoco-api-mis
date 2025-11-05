@@ -90,6 +90,11 @@ class CrmPersonDTO extends AbstractStructBase
      */
     protected ?int $gender = null;
     /**
+     * The genderNotProvided
+     * @var bool|null
+     */
+    protected ?bool $genderNotProvided = null;
+    /**
      * The hasDisability
      * @var bool|null
      */
@@ -201,6 +206,7 @@ class CrmPersonDTO extends AbstractStructBase
      * @uses CrmPersonDTO::setDepartment()
      * @uses CrmPersonDTO::setForename()
      * @uses CrmPersonDTO::setGender()
+     * @uses CrmPersonDTO::setGenderNotProvided()
      * @uses CrmPersonDTO::setHasDisability()
      * @uses CrmPersonDTO::setIdCardExpiryDate()
      * @uses CrmPersonDTO::setIdCardIssueDate()
@@ -235,6 +241,7 @@ class CrmPersonDTO extends AbstractStructBase
      * @param string $department
      * @param string $forename
      * @param int $gender
+     * @param bool $genderNotProvided
      * @param bool $hasDisability
      * @param string $idCardExpiryDate
      * @param string $idCardIssueDate
@@ -255,7 +262,7 @@ class CrmPersonDTO extends AbstractStructBase
      * @param string $placeOfBirth
      * @param string $title
      */
-    public function __construct(?int $birthDay = null, ?int $birthMonth = null, ?string $birthName = null, ?int $birthYear = null, ?string $birthday_1 = null, ?bool $birthdayNotProvided = null, ?string $constCentre = null, ?string $contactName = null, ?string $contactPhone = null, ?string $crisisContactName = null, ?string $crisisPhoneNo = null, ?int $customerId = null, ?string $department = null, ?string $forename = null, ?int $gender = null, ?bool $hasDisability = null, ?string $idCardExpiryDate = null, ?string $idCardIssueDate = null, ?string $idCardIssuePlace = null, ?string $identificationCardNo = null, ?bool $isSpecialCustomer = null, ?string $jobFunction = null, ?string $maritalStatus = null, ?string $middleName = null, ?bool $middleNameNotAvailable = null, ?string $name = null, ?string $nationality = null, ?string $passportExpiryDate = null, ?string $passportIssueDate = null, ?string $passportIssuePlace = null, ?string $passportNo = null, ?string $personalNo = null, ?string $placeOfBirth = null, ?string $title = null)
+    public function __construct(?int $birthDay = null, ?int $birthMonth = null, ?string $birthName = null, ?int $birthYear = null, ?string $birthday_1 = null, ?bool $birthdayNotProvided = null, ?string $constCentre = null, ?string $contactName = null, ?string $contactPhone = null, ?string $crisisContactName = null, ?string $crisisPhoneNo = null, ?int $customerId = null, ?string $department = null, ?string $forename = null, ?int $gender = null, ?bool $genderNotProvided = null, ?bool $hasDisability = null, ?string $idCardExpiryDate = null, ?string $idCardIssueDate = null, ?string $idCardIssuePlace = null, ?string $identificationCardNo = null, ?bool $isSpecialCustomer = null, ?string $jobFunction = null, ?string $maritalStatus = null, ?string $middleName = null, ?bool $middleNameNotAvailable = null, ?string $name = null, ?string $nationality = null, ?string $passportExpiryDate = null, ?string $passportIssueDate = null, ?string $passportIssuePlace = null, ?string $passportNo = null, ?string $personalNo = null, ?string $placeOfBirth = null, ?string $title = null)
     {
         $this
             ->setBirthDay($birthDay)
@@ -273,6 +280,7 @@ class CrmPersonDTO extends AbstractStructBase
             ->setDepartment($department)
             ->setForename($forename)
             ->setGender($gender)
+            ->setGenderNotProvided($genderNotProvided)
             ->setHasDisability($hasDisability)
             ->setIdCardExpiryDate($idCardExpiryDate)
             ->setIdCardIssueDate($idCardIssueDate)
@@ -635,6 +643,29 @@ class CrmPersonDTO extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($gender, true), gettype($gender)), __LINE__);
         }
         $this->gender = $gender;
+        
+        return $this;
+    }
+    /**
+     * Get genderNotProvided value
+     * @return bool|null
+     */
+    public function getGenderNotProvided(): ?bool
+    {
+        return $this->genderNotProvided;
+    }
+    /**
+     * Set genderNotProvided value
+     * @param bool $genderNotProvided
+     * @return \Pggns\MidocoApi\Mis\StructType\CrmPersonDTO
+     */
+    public function setGenderNotProvided(?bool $genderNotProvided = null): self
+    {
+        // validation for constraint: boolean
+        if (!is_null($genderNotProvided) && !is_bool($genderNotProvided)) {
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($genderNotProvided, true), gettype($genderNotProvided)), __LINE__);
+        }
+        $this->genderNotProvided = $genderNotProvided;
         
         return $this;
     }

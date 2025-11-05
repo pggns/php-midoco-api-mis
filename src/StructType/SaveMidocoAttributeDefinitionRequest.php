@@ -18,33 +18,33 @@ class SaveMidocoAttributeDefinitionRequest extends AbstractStructBase
      * The MidocoSystemAttributeDefinition
      * Meta information extracted from the WSDL
      * - ref: MidocoSystemAttributeDefinition
-     * @var \Pggns\MidocoApi\Mis\StructType\AttributeDefinitionDTO|null
+     * @var \Pggns\MidocoApi\Mis\StructType\MidocoSystemAttributeDefinition|null
      */
-    protected ?\Pggns\MidocoApi\Mis\StructType\AttributeDefinitionDTO $MidocoSystemAttributeDefinition = null;
+    protected ?\Pggns\MidocoApi\Mis\StructType\MidocoSystemAttributeDefinition $MidocoSystemAttributeDefinition = null;
     /**
      * Constructor method for SaveMidocoAttributeDefinitionRequest
      * @uses SaveMidocoAttributeDefinitionRequest::setMidocoSystemAttributeDefinition()
-     * @param \Pggns\MidocoApi\Mis\StructType\AttributeDefinitionDTO $midocoSystemAttributeDefinition
+     * @param \Pggns\MidocoApi\Mis\StructType\MidocoSystemAttributeDefinition $midocoSystemAttributeDefinition
      */
-    public function __construct(?\Pggns\MidocoApi\Mis\StructType\AttributeDefinitionDTO $midocoSystemAttributeDefinition = null)
+    public function __construct(?\Pggns\MidocoApi\Mis\StructType\MidocoSystemAttributeDefinition $midocoSystemAttributeDefinition = null)
     {
         $this
             ->setMidocoSystemAttributeDefinition($midocoSystemAttributeDefinition);
     }
     /**
      * Get MidocoSystemAttributeDefinition value
-     * @return \Pggns\MidocoApi\Mis\StructType\AttributeDefinitionDTO|null
+     * @return \Pggns\MidocoApi\Mis\StructType\MidocoSystemAttributeDefinition|null
      */
-    public function getMidocoSystemAttributeDefinition(): ?\Pggns\MidocoApi\Mis\StructType\AttributeDefinitionDTO
+    public function getMidocoSystemAttributeDefinition(): ?\Pggns\MidocoApi\Mis\StructType\MidocoSystemAttributeDefinition
     {
         return $this->MidocoSystemAttributeDefinition;
     }
     /**
      * Set MidocoSystemAttributeDefinition value
-     * @param \Pggns\MidocoApi\Mis\StructType\AttributeDefinitionDTO $midocoSystemAttributeDefinition
+     * @param \Pggns\MidocoApi\Mis\StructType\MidocoSystemAttributeDefinition $midocoSystemAttributeDefinition
      * @return \Pggns\MidocoApi\Mis\StructType\SaveMidocoAttributeDefinitionRequest
      */
-    public function setMidocoSystemAttributeDefinition(?\Pggns\MidocoApi\Mis\StructType\AttributeDefinitionDTO $midocoSystemAttributeDefinition = null): self
+    public function setMidocoSystemAttributeDefinition(?\Pggns\MidocoApi\Mis\StructType\MidocoSystemAttributeDefinition $midocoSystemAttributeDefinition = null): self
     {
         $this->MidocoSystemAttributeDefinition = $midocoSystemAttributeDefinition;
         
